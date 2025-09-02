@@ -1,12 +1,15 @@
 // Azure AD authentication configuration for MSAL
 import { LogLevel } from "@azure/msal-browser";
 
+// Use environment variables for sensitive config
+const clientId = import.meta.env.VITE_CUSTOM_CLIENT_ID;
+const tenantId = import.meta.env.VITE_CUSTOM_TENANT_ID;
+
 // Configuration object to be passed to MSAL instance on creation
 export const msalConfig = {
   auth: {
-    clientId: "2a9e92c3-8012-4012-acdd-0b5b49d0bad5", // Your app registration client ID
-    authority:
-      "https://login.microsoftonline.com/f32c90a1-d49d-4f12-843b-20e8affe4fc3", // Allow any Microsoft account
+    clientId,
+    authority: `https://login.microsoftonline.com/${tenantId}`,
     redirectUri: "http://localhost:3000", // Your redirect URI
   },
   cache: {
