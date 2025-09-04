@@ -4,6 +4,9 @@ import LoginPage from "./LoginPage";
 
 const ProtectedRoute = ({ children }) => {
   const { isAuthenticated, loading } = useAuth();
+  
+  console.log("ProtectedRoute - isAuthenticated:", isAuthenticated);
+  console.log("ProtectedRoute - loading:", loading);
 
   if (loading) {
     return (
@@ -17,9 +20,11 @@ const ProtectedRoute = ({ children }) => {
   }
 
   if (!isAuthenticated) {
+    console.log("ProtectedRoute - Not authenticated, showing LoginPage");
     return <LoginPage />;
   }
 
+  console.log("ProtectedRoute - Authenticated, rendering children");
   return children;
 };
 

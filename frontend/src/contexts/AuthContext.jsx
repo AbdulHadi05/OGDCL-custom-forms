@@ -50,6 +50,11 @@ export const AuthProvider = ({ children }) => {
   }, [accounts]);
 
   useEffect(() => {
+    console.log("AuthContext - useEffect triggered");
+    console.log("isAuthenticated:", isAuthenticated);
+    console.log("accounts:", accounts);
+    console.log("accounts[0]:", accounts[0]);
+    
     if (isAuthenticated && accounts[0]) {
       setUser(accounts[0]);
       fetchUserProfile();
