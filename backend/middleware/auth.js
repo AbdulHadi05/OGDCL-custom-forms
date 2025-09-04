@@ -3,9 +3,9 @@ import fetch from "node-fetch";
 
 // Azure AD configuration
 const AZURE_TENANT_ID =
-  process.env.AZURE_TENANT_ID || "f32c90a1-d49d-4f12-843b-20e8affe4fc3";
+  process.env.AZURE_TENANT_ID;
 const AZURE_CLIENT_ID =
-  process.env.AZURE_CLIENT_ID || "2a9e92c3-8012-4012-acdd-0b5b49d0bad5";
+  process.env.AZURE_CLIENT_ID;
 
 // Cache for validated tokens (simple in-memory cache)
 const tokenCache = new Map();

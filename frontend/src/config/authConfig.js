@@ -2,8 +2,8 @@
 import { LogLevel } from "@azure/msal-browser";
 
 // Use environment variables for sensitive config
-const clientId = import.meta.env.VITE_AZURE_CLIENT_ID || "2a9e92c3-8012-4012-acdd-0b5b49d0bad5";
-const tenantId = import.meta.env.VITE_AZURE_TENANT_ID || "f32c90a1-d49d-4f12-843b-20e8affe4fc3";
+const clientId = import.meta.env.VITE_AZURE_CLIENT_ID;
+const tenantId = import.meta.env.VITE_AZURE_TENANT_ID;
 
 // Debug log to check if env vars are loaded
 console.log("Environment variables check:");
